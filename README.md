@@ -43,4 +43,6 @@ make clean
 make
 ./st
 
+![Code_zA6xxvQ5z5](https://github.com/psv2522/DNS-Lookup-using-Splay-Trees/assets/87223770/94cc5809-5b54-43d4-959f-eb7f361156fe)
+
 Made as a part of my DSA 2 Project.
