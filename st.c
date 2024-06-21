@@ -253,11 +253,11 @@ void Delete(st* root, char* data){
 }
 
 
-void preorder(node *key, int *n){
+void inorder(node *key, int *n){
 	if(!key)
 		return;
+	inorder(key-> left, n);
     printf("| %-3d |  %-16s     |  %-16s      |\n", (*n)++, key->site, key->ipaddress);
-	preorder(key-> left, n);
-	preorder(key-> right, n);
+	inorder(key-> right, n);
 	return;
 }

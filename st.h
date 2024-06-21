@@ -28,4 +28,4 @@ void zag_zig(st* root, node* key);
 
 void Splay(st* root, node* key);//Decide rotations
 
-void preorder(st key, int *n);//Preorder traversal
+void inorder(st key, int *n);//Traversal

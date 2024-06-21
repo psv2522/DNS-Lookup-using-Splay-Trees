@@ -4,6 +4,22 @@
 #include <limits.h>
 #include"st.h"
 
+int countlines(){
+    FILE *fp;
+    fp=fopen("data.txt","r");
+    if(!fp){
+        printf("Can't Open File");
+    }
+    int count = 0;
+    char c;
+    for(c = getc(fp); c != EOF; c = getc(fp)){
+        if(c == '\n'){
+            count = count + 1;
+        }
+    }
+    return count;
+}
+
 int main(){
 
     st root;
@@ -15,7 +31,10 @@ int main(){
     if(!fp){
         printf("Can't Open File");
     }
-    for(int i = 1; i<101; i++){
+
+    int count = countlines(fp);
+    
+    for(int i = 1; i<count; i++){
         fscanf(fp, "%s - %s", site, ipaddress);
         InsertNode(&root, site, ipaddress); 
     }
@@ -31,7 +50,7 @@ int main(){
 		printf("1 Search for site/s\n");
 		printf("2 Insert new site and its ipaddress\n");
         printf("3 Delete site/s\n");
-		printf("4 Preorder traversal\n");
+		printf("4 Inorder traversal\n");
 		printf("5 Exit.\n");
 		printf("Enter option : ");
 		scanf("%d", &option);
@@ -84,7 +103,7 @@ int main(){
             printf("|------------------------------------------------------|\n");
             printf("| No. |  %-16s     |  %-16s      |\n", "site", "ipaddress");
             printf("|------------------------------------------------------|\n");
-    		preorder(root, &n);
+    		inorder(root, &n);
             printf("|------------------------------------------------------|\n");
     		break;
         }
